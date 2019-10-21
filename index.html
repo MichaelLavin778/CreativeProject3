@@ -11,7 +11,7 @@
             <h1>Search a Pokemon</h1>
             <h2 id="msg"></h2>
             <form>
-              <input type="text" v-model="pokemon">
+              <input type="text" v-model="input">
               <button v-on:click.prevent="fetchREST">Search</button>
             </form>
             <p id="name">Name: {{ pokemon }}</p>

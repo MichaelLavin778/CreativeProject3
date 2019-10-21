@@ -2,6 +2,7 @@
 let app = new Vue({
   el: "#root",
   data: {
+    input: '',
     pokemon: '',
     id: '',
     weight: '',
@@ -13,7 +14,7 @@ let app = new Vue({
   },
   methods: {
     fetchREST() {
-      let pokemon = this.pokemon;
+      let pokemon = this.input;
       pokemon = pokemon.toLowerCase();
       var url = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
       console.log(url);
