@@ -1,15 +1,37 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
-        <title></title>
-        <link rel="stylesheet" href="styles.css">
+        <meta charset="utf-8" />
+        <title>Complete Pokedex</title>
+        <link rel="stylesheet" href="style.css">
     </head>
     
     <body>
         <div id="root">
-            
+            <h1>Search a Pokemon</h1>
+            <h2 id="msg"></h2>
+            <form>
+              <input type="text" v-model="pokemon">
+              <button v-on:click.prevent="fetchREST">Search</button>
+            </form>
+            <p id="name">Name: {{ pokemon }}</p>
+            <p id="id">Id: {{ id }}</p>
+            <p id="types">Type(s): </p>
+            <ul>
+              <li v-for="type in types">
+                {{ type.name }}
+              </li>
+            </ul>
+            <p id="weight">Weight: {{ weight }}</p>
+            <p id="moves">Moves: </p>
+            <ul>
+              <li v-for="move in moves">
+                {{ move.name }}
+              </li>
+            </ul>
         </div>
-        <script text="type/javascript" src="script.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
+        <script src="script.js"></script>
     </body>
     
     <pb>
