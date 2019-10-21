@@ -15,6 +15,11 @@
             </form>
             <h2 id="msg"></h2>
             <p id="name">Name: {{ pokemon }}</p>
+            <img v-bind:src="sprite">
+            <img v-bind:src="sprite_shiny">
+            
+            <br>
+            
             <p id="id">Id: {{ id }}</p>
             <p id="weight">Weight: {{ weight }}</p>
             <p id="types">Type(s): </p>
@@ -27,6 +32,12 @@
             <ul>
               <li v-for="move in moves">
                 {{ move.name }}
+              </li>
+            </ul>
+            <p id="abilities">Possible Abilities: </p>
+            <ul>
+              <li v-for="ability in abilities">
+                {{ ability.name }}
               </li>
             </ul>
         </div>

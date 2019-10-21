@@ -8,7 +8,9 @@ let app = new Vue({
     weight: '',
     types: [],
     moves: [],
-    sprite: ''
+    abilities: [],
+    sprite: '',
+    sprite_shiny: ''
   },
   computed: {
   },
@@ -17,15 +19,18 @@ let app = new Vue({
       let pokemon = this.input;
       pokemon = pokemon.toLowerCase();
       var url = "https://pokeapi.co/api/v2/pokemon/" + pokemon;
-      console.log(url);
+      // console.log(url);
       fetch(url)
         .then((data) => {
           document.getElementById("msg").innerHTML = "Not a Pokemon: " + toTitleCase(pokemon) + "!";
           this.pokemon = '';
+          this.sprite = '';
+          this.sprite_shiny ='';
           this.id = '';
           this.weight = '';
           this.types = [];
           this.moves = [];
+          this.abilities = [];
           this.sprtie = '';
           return (data.json());
         })
@@ -45,21 +50,24 @@ let app = new Vue({
           this.types = [];
           for (let i = 0; i < json.types.length; i++) {
             // console.log(json.types[i].type.name);
-            // console.log(json.types[i].name);
-            // console.log(json.types[i].type);
             this.types.push({ name: json.types[i].type.name });
           };
           
           this.moves = [];
           for (let i = 0; i < json.moves.length; i++) {
             // console.log(json.moves[i].move.name);
-            // console.log(json.moves[i].name);
-            // console.log(json.moves[i].move);
             this.moves.push({ name: json.moves[i].move.name });
           };
           
-          console.log(json.sprite.front_default);
-          this.sprite = json.sprite.front_default;
+          this.abilities = [];
+          for (let i = 0; i < json.abilities.length; i++) {
+            // console.log(json.abilities[i].ability.name);
+            this.abilities.push({ name: json.abilities[i].ability.name });
+          };
+          
+          // console.log(json.sprites.front_default);
+          this.sprite = json.sprites.front_default;
+          this.sprite_shiny = json.sprites.front_shiny;
         });
     },
   }
