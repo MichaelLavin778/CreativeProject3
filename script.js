@@ -5,6 +5,7 @@ let app = new Vue({
     input: '',
     pokemon: '',
     id: '',
+    height: '',
     weight: '',
     types: [],
     moves: [],
@@ -27,11 +28,11 @@ let app = new Vue({
           this.sprite = '';
           this.sprite_shiny ='';
           this.id = '';
+          this.height = '';
           this.weight = '';
           this.types = [];
           this.moves = [];
           this.abilities = [];
-          this.sprtie = '';
           return (data.json());
         })
         .then((json) => {
@@ -44,6 +45,7 @@ let app = new Vue({
           // console.log(json.id);
           this.id = json.id;
           
+          this.height = json.height;
           this.weight = json.weight;
           
           // console.log(json.type);
