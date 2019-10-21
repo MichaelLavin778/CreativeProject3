@@ -9,20 +9,20 @@
     <body>
         <div id="root">
             <h1>Search a Pokemon</h1>
-            <h2 id="msg"></h2>
             <form>
               <input type="text" v-model="input">
               <button v-on:click.prevent="fetchREST">Search</button>
             </form>
+            <h2 id="msg"></h2>
             <p id="name">Name: {{ pokemon }}</p>
             <p id="id">Id: {{ id }}</p>
+            <p id="weight">Weight: {{ weight }}</p>
             <p id="types">Type(s): </p>
             <ul>
               <li v-for="type in types">
                 {{ type.name }}
               </li>
             </ul>
-            <p id="weight">Weight: {{ weight }}</p>
             <p id="moves">Moves: </p>
             <ul>
               <li v-for="move in moves">
