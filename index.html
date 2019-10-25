@@ -10,39 +10,53 @@
     
     <body>
         <div id="root">
-            <h1>Search a Pokemon</h1>
-            <form>
+            <h1 class="topping">Search a Pokemon</h1>
+            <h3 class="topping">by name or by number!</h3>
+            <form class="topping">
               <input type="text" v-model="input">
               <button v-on:click.prevent="fetchREST">Search</button>
             </form>
-            <h2 id="msg"></h2>
-            <p id="name">Name: {{ pokemon }}</p>
-            <img v-bind:src="sprite">
-            <img v-bind:src="sprite_shiny">
+            <h2 class="topping" id="msg"></h2>
             
-            <br>
-            
-            <p id="id">Id: {{ id }}</p>
-            <p id="height">Height: {{ height }}</p>
-            <p id="weight">Weight: {{ weight }}</p>
-            <p id="types">Type(s): </p>
-            <ul>
-              <li v-for="type in types">
-                {{ type.name }}
-              </li>
-            </ul>
-            <p id="moves">Moves: </p>
-            <ul>
-              <li v-for="move in moves">
-                {{ move.name }}
-              </li>
-            </ul>
-            <p id="abilities">Possible Abilities: </p>
-            <ul>
-              <li v-for="ability in abilities">
-                {{ ability.name }}
-              </li>
-            </ul>
+            <div class="grid-container">
+              <div class="grid-item">
+                <p id="name">Name: {{ pokemon }}</p>
+                <img v-bind:src="sprite">
+                <img v-bind:src="sprite_shiny">
+                
+                <br>
+                
+                <p id="id">Id: {{ id }}</p>
+                <p id="height">Height: {{ height }}</p>
+                <p id="weight">Weight: {{ weight }}</p>
+                <p id="types">Type(s): </p>
+                <ul>
+                  <li v-for="type in types">
+                    {{ type.name }}
+                  </li>
+                </ul>
+                
+                <p id="abilities">Possible Abilities: </p>
+                <ul>
+                  <li v-for="ability in abilities">
+                    {{ ability.name }}
+                  </li>
+                </ul>
+              </div>
+              
+              <div class="grid-item">
+                <p></p>
+              </div>
+              
+              <div class="grid-item">
+                <p id="moves">Moves: </p>
+                <ul>
+                  <li v-for="move in moves">
+                    {{ move.name }}
+                  </li>
+                </ul>
+              </div>  
+            </div>
         </div>
         <script src="https://cdn.jsdelivr.net/npm/vue@2.6.2/dist/vue.js"></script>
         <script src="script.js"></script>

@@ -5,11 +5,28 @@ body {
     background-repeat: repeat-y;
     font-family: 'Nanum Pen Script', cursive;
     color: #2A4B7C;
-    font-size: 20px;
+    margin: 15px;
 }
 p {
-    font-size: 20px;   
+    font-size: 40px;   
 }
+
+.grid-container {
+  display: grid;
+  grid-template-columns: auto auto auto;
+  padding: 10px;
+}
+.grid-item {
+  padding: 20px;
+  font-size: 30px;
+  text-align: center;
+}
+
+.topping {
+    margin: auto;
+    font-size: 50px;
+}
+
 .footer {
     justify-content: center;
     display: flex;
