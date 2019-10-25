@@ -1,7 +1,8 @@
 body {
-    background-image: url("poke.png");
+    background-image: url("pokeball.jpg");
     width: 100%;
     background-position: center;
+    background-repeat: repeat-y;
     font-family: 'Nanum Pen Script', cursive;
     color: #2A4B7C;
     font-size: 20px;
